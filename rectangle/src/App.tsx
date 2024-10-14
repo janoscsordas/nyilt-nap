@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export default function App() {
@@ -12,9 +12,6 @@ export default function App() {
 
     const [endPosX, setEndPosX] = useState(0)
     const [endPosY, setEndPosY] = useState(0)
-
-    const startRectangle = useRef(null)
-    const endRectangle = useRef(null)
 
     useEffect(() => {
         if (isStarted) {
@@ -78,8 +75,8 @@ export default function App() {
                     </div>
 
                     {/* Rectangles */}
-                    <div ref={startRectangle} className="absolute w-[15rem] h-[15rem] bg-green-700 rounded-md z-20" style={{ left: Number(posX), top: Number(posY) }}></div>
-                    <div ref={endRectangle} className="absolute w-[15rem] h-[15rem] bg-slate-100 rounded-md z-1" style={{ left: endPosX, top: endPosY }}></div>
+                    <div className="absolute w-[15rem] h-[15rem] bg-green-700 rounded-md z-20" style={{ left: Number(posX), top: Number(posY) }}></div>
+                    <div className="absolute w-[15rem] h-[15rem] bg-slate-100 rounded-md z-1" style={{ left: endPosX, top: endPosY }}></div>
 
                     <div className="w-full min-h-screen flex justify-center items-end gap-5 pb-5">
                         <label className="z-50 text-gray-300 text-xl">
